@@ -1,0 +1,143 @@
+$color-dark-gray: #333;
+$font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$background-color-light-grey: rgb(244, 244, 244);
+$background-color-button: rgba(0, 0, 0, 0.75);
+$background-color-button-hover: rgba(0, 0, 0, 0.85);
+$breakpoint-tablet: 768px;
+$breakpoint-phone: 640px;
+
+* {
+    &:not(.ReactModalPortal) {
+        box-sizing: border-box;
+        color: $color-dark-gray;
+        font-size: 10px;
+    }
+}
+body {
+    background-color: $background-color-light-grey;
+}
+.App {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    margin: 0 auto;
+    max-width: 80vw;
+    padding: 40px;
+    .title {
+        font-size: 4.4rem;
+        font-family: $font-family;
+    }
+    .subtitle {
+        font-size: 3rem;
+        font-family: $font-family;
+    }
+    .form {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-gap: 1rem;
+        align-items: start;
+        .label {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .input {
+            font-size: 1.6rem;
+            padding: 0.5rem 2rem;
+            line-height: 2.8rem;
+            border-radius: 20px;
+            background-color: white;
+            margin-bottom: 1rem;
+        }
+        .button {
+            background-color: $background-color-button;
+            color: white;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: background-color 250ms;
+            &:hover {
+                background-color: $background-color-button-hover;
+            }
+        }
+    }
+    .card-list {
+        margin: 20px 0 30px 0;
+        column-count: 3;
+        .card {
+            margin-bottom: 1rem;
+            display: flex;
+            .card-image {
+                flex: 100%;
+                margin-top: 1rem;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+    .loading {
+        text-align: center;
+        font-size: 1.6rem;
+        margin-bottom: 50px;
+    }
+    .words-list {
+        li {
+            font-size: 2.2rem;
+            font-style: italic;
+        }
+    }
+    .main-navigation-items {
+        width: 100%;
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: flex-end;
+        ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                margin: 0 0 0 1rem;
+                a {
+                    text-decoration: none;
+                    font-size: 1.8rem;
+                    font-family: $font-family;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .container {
+        .form {
+            grid-template-columns: auto;
+            grid-gap: 1rem;
+            align-items: start;
+            .label {
+                margin-bottom: 0;
+            }
+            .input {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-phone) {
+    .container {
+        max-width: 90vw;
+        padding: 20px;
+        .title {
+            font-size: 3.8rem;
+        }
+        .subtitle {
+            font-size: 2.4rem;
+        }
+        .card-list {
+            column-count: 1;
+        }
+    }
+}
